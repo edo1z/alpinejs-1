@@ -1,8 +1,20 @@
 <html>
   <head>
-    <script type="module" src="./dist/bundle.js"></script>
+    <title>Alpine.js sample</title>
   </head>
   <body>
-    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ open: false }">
+      <button @click="open = !open">Toggle</button>
+      <span x-show="open">ここに表示したい文字列</span>
+    </div>
+
+    <div x-data="dropdown">
+      <button @click="open = !open">Toggle</button>
+      <ul x-show="open">
+        HOGE
+      </ul>
+    </div>
+
+    <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>
